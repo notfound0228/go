@@ -1,0 +1,1037 @@
+;===========================================================================
+; ’ÊíUŒ‚EƒGƒNƒX
+;===========================================================================
+; —§ŽãP
+[Statedef 201]
+type = S
+movetype = A
+physics = S
+juggle = 1
+anim = 201
+;velset = 0
+ctrl = 0
+
+[State 201]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 201]
+type = Hitdef
+Triggerall = p2stateno != 5040
+trigger1 = AnimElem = 3
+attr = S, NA
+hitflag = MAF
+guardflag = MA
+animtype = light
+air.animtype = back
+;damage = Ceil(20*FVar(1)) 
+damage = ifelse((var(13)=1),Ceil(9*FVar(1)),Ceil(14*FVar(1)) )
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -10,-40
+hitsound = S1,0
+guardsound = S2,0
+ground.type = Low
+priority = 7, Hit
+pausetime = 12,12
+fall.recovertime = 30
+ground.slidetime = 7
+ground.hittime = 7
+ground.velocity = -4.3
+air.velocity = -1.5,-6
+ground.cornerpush.veloff = -6
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -6
+yaccel = .5
+getpower = 0,0
+envshake.time = 3
+envshake.ampl = 3
+envshake.freq = 60
+
+[State 201]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; —§‹­‚o
+[Statedef 211]
+type = S
+movetype = A
+physics = S
+juggle = 2
+anim = 211
+;velset = 0
+ctrl = 0
+
+[State 211]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 211]
+type = Hitdef
+Triggerall = p2stateno != 5040
+trigger1 = AnimElem = 5
+attr = S, NA
+hitflag = MAF
+guardflag = MA
+animtype = Hard
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(22*FVar(1)),Ceil(30*FVar(2)) )
+;sparkno = s7310+(random%7)
+sparkno = s7340+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -10,-68
+;sparkxy = -30,-58
+hitsound   = s1,2
+guardsound = s2,0
+ground.type = High
+priority = 7, Hit
+pausetime = 8,8
+fall.recovertime = 35
+ground.slidetime = 16
+guard.slidetime = 10
+ground.hittime = 24
+ground.velocity = -5.5
+air.velocity = -2.5,-2.5
+ground.cornerpush.veloff = -7
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -7
+yaccel = .5
+getpower = 0,0
+envshake.time = 5
+envshake.ampl = 5
+envshake.freq = 60
+
+[State 211]
+type = Hitdef
+Triggerall = p2stateno != 5040
+trigger1 = AnimElem = 6
+attr = S, NA
+hitflag = MAF
+guardflag = MA
+animtype = Hard
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(18*FVar(1)),Ceil(26*FVar(2)) )
+;sparkno = s7310+(random%7)
+sparkno = s7340+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -30,-58
+;sparkxy = -10,-68
+hitsound   = s1,2
+guardsound = s2,0
+ground.type = High
+priority = 7, Hit
+pausetime = 12,12
+fall.recovertime = 35
+ground.slidetime = 16
+guard.slidetime = 10
+ground.hittime = 20
+ground.velocity = -6.5
+air.velocity = -2.5,-2.5
+ground.cornerpush.veloff = -4
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -4
+yaccel = .5
+getpower = 0,0
+envshake.time = 5
+envshake.ampl = 5
+envshake.freq = 60
+
+[State 211]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; —§Žã‚j
+[Statedef 231]
+type = S
+movetype = A
+physics = S
+anim = 231
+juggle = 1
+;velset = 0
+ctrl = 0
+
+[State 231]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 231]
+type = Hitdef
+Triggerall = p2stateno != 5040
+trigger1 = AnimElem = 4
+attr = S, NA
+hitflag = MAF
+guardflag = MA
+animtype = light
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(10*FVar(1)),Ceil(16*FVar(1)) )
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -20,-65
+hitsound   = s1,1
+guardsound = s2,0
+ground.type = Low
+air.type = Low
+priority = 7, Hit
+pausetime = 12,12
+fall.recovertime = 30
+ground.slidetime = 12
+ground.hittime = 12
+ground.velocity = -4.3
+air.velocity = -1.5,-6
+ground.cornerpush.veloff = -7
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -7
+yaccel = .5
+getpower = 0,0
+envshake.time = 3
+envshake.ampl = 3
+envshake.freq = 60
+
+[State 231]
+type = Hitdef
+Triggerall = p2stateno != 5040
+triggerall = !MoveContact && StateNo = 230
+trigger1 = AnimElem = 6
+attr = S, NA
+hitflag = MAF
+guardflag = MA
+animtype = light
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(10*FVar(1)),Ceil(16*FVar(1)) )
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = 0,-165
+hitsound   = s1,0
+guardsound = s2,0
+ground.type = Low
+air.type = Low
+priority = 7, Hit
+pausetime = 12,12
+fall.recovertime = 30
+ground.slidetime = 12
+ground.hittime = 12
+ground.velocity = -4.3
+air.velocity = -1.5,-6
+ground.cornerpush.veloff = -7
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -7
+yaccel = .5
+air.fall = 1
+getpower = 0,0
+envshake.time = 3
+envshake.ampl = 3
+envshake.freq = 60
+
+[State 231]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; —§‹­‚jE2-1
+[Statedef 245]
+type = S
+movetype = A
+physics = S
+juggle = 0
+anim = 245
+ctrl = 0
+;velset = 0
+
+[State 245]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 245]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 246
+ctrl = 1
+
+;---------------------------------------------------------------------------
+; —§‹­‚jE2-1
+[Statedef 246]
+type = A
+movetype = A
+physics = N
+juggle = 2
+anim = 246
+ctrl = 0
+;velset = 0
+
+[State 246]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 246]
+type = PlayerPush
+trigger1 = 1
+value = 1
+
+[State 246]
+type = VelSet
+trigger1 = AnimElem = 1
+x = 6
+y = -6  ;7
+
+[State 246]
+type = VelSet
+trigger1 = AnimElem = 5
+x = 1
+
+[State 246]
+type = VelAdd
+trigger1 = AnimElem = 1,>= 0 && AnimElem = 3,< 0
+x = -.43
+
+[State 246]
+type = VelAdd
+trigger1 = 1
+y = .6
+
+[State 246]
+type = Hitdef
+Triggerall = p2stateno != 5040
+trigger1 = time = 1
+attr = A, NA
+hitflag = MAF
+guardflag = MA
+animtype = Hard
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(40*FVar(1)),Ceil(52*FVar(2)) )
+sparkno = s7310+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -10,-45
+hitsound   = s1,3
+guardsound = s2,0
+ground.type = Low
+priority = 7, Hit
+pausetime = 10,10
+fall.recovertime = 35
+ground.slidetime = 12
+guard.slidetime = 16
+ground.hittime = 20
+ground.velocity = -5.7
+air.velocity = -2.5,-3
+ground.cornerpush.veloff = -10
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -10
+fall.recover = 0
+yaccel = .5
+getpower = 0,0
+envshake.time = 10
+envshake.ampl = 5
+envshake.freq = 60
+
+[State 246]
+type = Hitdef
+Triggerall = p2stateno != 5040
+triggerall = !MoveContact && StateNo = 242
+trigger1 = AnimElem = 5
+attr = A, NA
+hitflag = MAF
+guardflag = MA
+animtype = Hard
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(40*FVar(1)),Ceil(52*FVar(2)) )
+sparkno = s7310+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -10,-125
+hitsound   = s1,3
+guardsound = s2,0
+ground.type = Low
+priority = 7, Hit
+pausetime = 10,10
+fall.recovertime = 35
+ground.slidetime = 12
+guard.slidetime = 10
+ground.hittime = 15
+ground.velocity = -5.7
+air.velocity = -2.5,-3
+ground.cornerpush.veloff = -10
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -10
+fall.recover = 0
+yaccel = .5
+getpower = 0,0
+envshake.time = 10
+envshake.ampl = 5
+envshake.freq = 60
+
+
+[State 246]
+type = ChangeState
+trigger1 = Vel Y > 0 && Pos Y >= -10
+value = 52
+
+;===========================================================================
+; ‹üŽã‚o
+[Statedef 401]
+type = C
+movetype = A
+physics = C
+anim = 401
+juggle = 2
+;velset = 0
+ctrl = 0
+
+[State 401]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 401]
+type = Hitdef
+triggerall = p2stateno != 5040
+trigger1 = AnimElem = 3
+attr = C, NA
+hitflag = MAF
+guardflag = L
+animtype = Light
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(9*FVar(1)),Ceil(14*FVar(1)) )
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -10,0
+hitsound   = s1,0
+guardsound = s2,0
+ground.type = Low
+priority = 7, Hit
+pausetime = 9,10
+fall.recovertime = 30
+guard.pausetime = 12,12
+ground.slidetime = 6
+ground.hittime = 6
+ground.velocity = -4.3
+air.velocity = -1.5,-6
+ground.cornerpush.veloff = -6
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -6
+yaccel = .7
+getpower = 0,0
+envshake.time = 3
+envshake.ampl = 3
+envshake.freq = 60
+
+[State 401]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;‹ü‹­P
+[Statedef 411]
+type = C
+movetype = A
+physics = C
+anim = 411
+juggle = 2
+;velset = 0
+ctrl = 0
+
+[State 411]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 411]
+type = Hitdef
+Triggerall = p2stateno != 5040
+trigger1 = AnimElem = 5
+attr = C, NA
+hitflag = MAF
+guardflag = MA
+animtype = Hard
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(30*FVar(1)),Ceil(42*FVar(2)) )
+sparkno = s7340+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -20,-35
+hitsound   = s1,2
+guardsound = s2,0
+ground.type = Low
+priority = 7, Hit
+pausetime = 12,12
+fall.recovertime = 35
+ground.slidetime = 12
+guard.slidetime = 10
+ground.hittime = 15
+ground.velocity = -5.7
+air.velocity = -2.5,-3
+ground.cornerpush.veloff = -10
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -10
+yaccel = .5
+getpower = 0,0
+envshake.time = 5
+envshake.ampl = 5
+envshake.freq = 60
+
+[State 411]
+type = Hitdef
+triggerall = p2stateno != 5040
+triggerall = !MoveContact && StateNo = 410
+trigger1 = AnimElem = 6
+attr = C, NA
+hitflag = MAF
+guardflag = MA
+animtype = up
+;air.animtype = back
+damage = ifelse((var(13)=1),Ceil(18*FVar(1)),Ceil(30*FVar(2)) )
+sparkno = s7340+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -25,-35
+hitsound   = s1,2
+guardsound = s2,0
+ground.type = High
+priority = 7, Hit
+pausetime = 13,13
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -1,-4.5
+guard.velocity = -6.5
+air.velocity = -2,-6
+ground.cornerpush.veloff = -6
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -6
+fall = 1
+fall.recover = 0
+yaccel = .54
+getpower = 0,0
+envshake.time = 10
+envshake.ampl = 5
+envshake.freq = 30
+
+[State 411]
+type = Hitdef
+triggerall = p2stateno != 5040
+trigger1 = AnimElem = 11
+attr = C, NA
+hitflag = MAF
+guardflag = MA
+animtype = Hard
+air.animtype = back
+damage = 25,0
+sparkno = s7340+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -5,-35
+hitsound   = s1,2
+guardsound = s2,0
+ground.type = Trip
+priority = 7, Hit
+pausetime = 13,13
+ground.slidetime = 18
+guard.slidetime =  10
+ground.hittime = 19
+air.velocity = 2.5,-2.5
+ground.velocity = 2.5,-4
+guard.velocity = -5.5
+ground.cornerpush.veloff = -6
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -6
+yaccel = .5
+fall = 1
+getpower = 0,0
+envshake.time = 5
+envshake.ampl = 5
+envshake.freq = 60
+
+[State 411]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+
+;---------------------------------------------------------------------------
+;‹üŽã‚j
+[Statedef 431]
+type = C
+movetype = A
+physics = C
+juggle = 1
+anim = 431
+;velset = 0
+ctrl = 0
+
+[State 431]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 431]
+type = Hitdef
+triggerall = p2stateno != 5040
+trigger1 = AnimElem = 4
+attr = C, NA
+hitflag = MAF
+guardflag = MA
+animtype = Light
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(12*FVar(1)),Ceil(18*FVar(1)) )
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = 0,-70
+hitsound   = s1,1
+guardsound = s2,0
+ground.type = Low
+priority = 7, Hit
+pausetime = 9,12
+fall.recovertime = 30
+ground.slidetime = 14
+;guard.slidetime =  6
+ground.hittime = 14
+ground.velocity = -4.3
+air.velocity = -1.5,-6
+ground.cornerpush.veloff = -6
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -6
+yaccel = .5
+getpower = 0,0
+envshake.time = 3
+envshake.ampl = 3
+envshake.freq = 60
+
+[State 431]
+type = Hitdef
+Triggerall = p2stateno != 5040
+triggerall = !MoveContact && StateNo = 430
+trigger1 = AnimElem = 5
+attr = C, NA
+hitflag = MAF
+guardflag = MA
+animtype = light
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(12*FVar(1)),Ceil(18*FVar(1)) )
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = 0,-165
+hitsound   = s1,0
+guardsound = s2,0
+ground.type = Low
+air.type = Low
+priority = 7, Hit
+pausetime = 12,12
+fall.recovertime = 30
+ground.slidetime = 12
+ground.hittime = 12
+ground.velocity = -4.3
+air.velocity = -1.5,-6
+ground.cornerpush.veloff = -7
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -7
+yaccel = .5
+air.fall = 1
+getpower = 0,0
+envshake.time = 3
+envshake.ampl = 3
+envshake.freq = 60
+
+[State 431]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
+;===========================================================================
+; ‹ó’†Žã‚o
+[Statedef 601]
+type = A
+movetype = A
+physics = A
+juggle = 1
+anim = 601
+ctrl = 0
+
+[State 601]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 601]
+type = Hitdef
+triggerall = p2stateno != 5040
+trigger1 = AnimElem = 2
+attr = A, NA
+hitflag = MAF
+guardflag = HA
+animtype = Light
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(8*FVar(1)),Ceil(12*FVar(1)) )
+sparkno = s7300+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -10,-85
+hitsound   = s1,0
+guardsound = s2,0
+ground.type = High
+priority = 7, Hit
+pausetime = 12,12
+fall.recovertime = 30
+ground.slidetime = 9
+ground.hittime = 6
+ground.velocity = -4.5
+air.velocity = -2,-3
+ground.cornerpush.veloff = -7
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -7
+yaccel = .5
+getpower = 0,0
+envshake.time = 3
+envshake.ampl = 3
+envshake.freq = 60
+
+[State 601]
+type = ChangeState
+triggerall = AnimTime = 0
+trigger1 = Vel Y > 0 && Pos Y >= -5
+value = 50
+
+;---------------------------------------------------------------------------
+; ‹ó’†‹­‚o
+[Statedef 611]
+type = A
+movetype = A
+physics = A
+juggle = 2
+anim = 611
+ctrl = 0
+
+[State 611]
+type = VarSet
+trigger1 = 1
+var(5) = 1
+
+[State 611]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 611]
+type = Hitdef
+triggerall = p2stateno != 5040
+trigger1 = AnimElem = 6
+attr = A, NA
+hitflag = MAF
+guardflag = HA
+animtype = Hard
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(28*FVar(1)),Ceil(36*FVar(2)) )
+sparkno = s7340+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -25,-55
+hitsound   = s1,2
+guardsound = s2,0
+ground.type = High
+priority = 7, Hit
+pausetime = 10,10
+fall.recovertime = 35
+ground.slidetime = 15
+ground.hittime = 15
+ground.velocity = -6.5
+air.velocity = -2.7,-3.5
+airguard.velocity = -3.4,-2.6
+ground.cornerpush.veloff = -12
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -12
+yaccel = .5
+getpower = 0,0
+envshake.time = 5
+envshake.ampl = 5
+envshake.freq = 60
+
+[State 611]
+type = ChangeState
+triggerall = AnimTime = 0
+trigger1 = Vel Y > 0 && Pos Y >= -5
+value = 50
+
+;---------------------------------------------------------------------------
+; ‹ó’†Žã‚j
+[Statedef 631]
+type = A
+movetype = A
+physics = A
+juggle = 1
+anim = 631
+ctrl = 0
+
+[State 631]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 631]
+type = Hitdef
+triggerall = p2stateno != 5040
+;trigger1 = AnimElem = 2
+trigger1 = time = 1
+attr = A, NA
+hitflag = MAF
+guardflag = HA
+animtype = Light
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(10*FVar(1)),Ceil(14*FVar(1)) )
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -25,-90
+hitsound   = s1,1
+guardsound = s2,0
+ground.type = High
+priority = 7, Hit
+pausetime = 11,12
+fall.recovertime = 30
+ground.slidetime = 9
+ground.hittime = 7
+ground.velocity = -4.6
+air.velocity = -2.2,-3
+ground.cornerpush.veloff = -7
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -7
+yaccel = .5
+getpower = 0,0
+envshake.time = 3
+envshake.ampl = 3
+envshake.freq = 60
+
+[State 631]
+type = ChangeState
+triggerall = AnimTime = 0
+trigger1 = Vel Y > 0 && Pos Y >= -5
+value = 50
+
+;---------------------------------------------------------------------------
+; ‹ó’†‹­‚j
+[Statedef 641]
+type = A
+movetype = A
+physics = A
+juggle = 2
+anim = 641
+ctrl = 0
+
+[State 641]
+type = VarSet
+trigger1 = 1
+var(5) = 1
+
+[State 641]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 641]
+type = Hitdef
+triggerall = p2stateno != 5040
+;trigger1 = AnimElem = 2
+trigger1 = time = 1
+attr = A, NA
+hitflag = MAF
+guardflag = HA
+animtype = Hard
+air.animtype = back
+damage = ifelse((var(13)=1),Ceil(32*FVar(1)),Ceil(40*FVar(2)) )
+sparkno = s7310+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -10,-40
+hitsound   = s1,3
+guardsound = s2,0
+ground.type = High
+priority = 7, Hit
+pausetime = 10,13
+ground.slidetime = 18
+ground.hittime = 18
+ground.velocity = -7.5
+air.velocity = -3.5,-4.8
+airguard.velocity = -3.4,-2.6
+ground.cornerpush.veloff = -12
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -12
+fall.recover = 0
+yaccel = .5
+getpower = 0,0
+envshake.time = 5
+envshake.ampl = 5
+envshake.freq = 60
+
+[State 641]
+type = ChangeState
+triggerall = AnimTime = 0
+trigger1 = Vel Y > 0 && Pos Y >= -5
+value = 50
+
+;---------------------------------------------------------------------------
+; ‹ó’†‚«”ò‚Î‚µ
+[Statedef 651]
+type = A
+movetype = A
+physics = A
+anim = 651
+juggle = 3
+ctrl = 0
+
+[State 651]
+type = VarSet
+trigger1 = 1
+var(5) = 1
+
+[State 651]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 651]
+type = Explod
+trigger1 = AnimElem = 5
+anim = 655
+postype = p1
+pos = 0,0
+sprpriority = 3
+bindtime = -1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+ignorehitpause = 0
+
+[State 651]
+type = Hitdef
+triggerall = p2stateno != 5040
+triggerall = p2statetype = A
+trigger1 = time = 1
+attr = A, NA
+hitflag = MAF
+guardflag = HA
+animtype = Hard
+air.animtype = back
+damage = 70,0
+sparkno = s7350+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -20,0
+hitsound   = s1,4
+guardsound = s2,0
+ground.type = High
+priority = 7, Hit
+pausetime = 10,10
+ground.slidetime = 20
+ground.hittime = 23
+ground.velocity = -5.5,-7.5
+guard.velocity = -6.5
+air.velocity = -4.3,-6
+ground.cornerpush.veloff = -6
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -6
+fall = 1
+fall.recovertime = 35
+air.fall = 1
+yaccel = .5
+getpower = 0,0
+p2facing = 1
+p2stateno = 310 
+envshake.time = 20
+envshake.ampl = 10
+envshake.freq = 30
+
+[State 651]
+type = Hitdef
+triggerall = p2stateno != 5040
+triggerall = p2statetype != A
+trigger1 = time = 1
+attr = A, NA
+hitflag = MAF
+guardflag = HA
+animtype = Hard
+air.animtype = back
+damage = Ceil(40*FVar(2)) 
+sparkno = s7350+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -20,0
+hitsound   = s1,4
+guardsound = s2,0
+ground.type = High
+priority = 7, Hit
+pausetime = 10,10
+ground.slidetime = 15
+ground.hittime = 12
+ground.velocity = -4.6
+air.velocity = -4.2,9
+ground.cornerpush.veloff = -10
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = -10
+air.fall = 1
+yaccel = .5
+getpower = 0,0
+p2facing = 1
+;p2stateno = 310 
+envshake.time = 20
+envshake.ampl = 10
+envshake.freq = 30
+
+[State 651]
+type = ChangeState
+triggerall = AnimTime = 0
+trigger1 = Vel Y > 0 && Pos Y >= -5
+value = 50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;---------------------------------------------------------------------------
+; xxxx
+[Statedef 2876]
+type = S
+movetype = A
+physics = S
+juggle = 2
+anim = 2872
+;velset = 0
+ctrl = 0
+
+[State 211]
+type = RemoveExplod
+trigger1 = time = 0
+
+
+[State 651]
+type = Explod
+trigger1 = AnimElem = 7
+anim = 2876
+postype = p1
+pos = 70,-50
+sprpriority = 3
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+ignorehitpause = 0
+
+[State 211]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 1
+ctrl = 1
+

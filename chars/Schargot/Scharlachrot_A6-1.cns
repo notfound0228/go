@@ -1,0 +1,2852 @@
+;===========================================================================
+; 超必殺技エフェクト
+;===========================================================================
+;===========================================================================
+; 新技・W・エフェクト・1-1
+[Statedef 4600]
+type    = A
+movetype= I
+physics = N
+velset = 0,0
+anim = 2085
+ctrl = 0
+ownpal = 1
+sprpriority = 8
+
+[State 4600]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4600]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+supermovetime = 9999
+pausemovetime = 9999
+ignorehitpause = 1
+
+[State 4600]
+type = PlaySnd
+trigger1 = AnimElem = 7,3
+value = s8,10
+volume = -50
+
+[State 4600]
+type = Explod
+trigger1 = AnimElem = 1
+anim = 2086
+postype = p1
+;pos = 0,0
+pos = 0,0
+sprpriority = 2
+bindtime = -1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4600
+
+[State 4600]
+type = ChangeState
+triggerall = root,movetype != H
+trigger1 = root,stateno = 2057
+trigger1 = root,animelem = 5,18
+value = 4605
+ctrl = 0
+
+;---------------------------------------------------------------------------
+; 新技・W・エフェクト・1-1
+[Statedef 4601]
+type    = A
+movetype= I
+physics = N
+velset = 0,0
+anim = 2085
+ctrl = 0
+ownpal = 1
+sprpriority = 8
+
+[State 4601]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4601]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+supermovetime = 9999
+pausemovetime = 9999
+ignorehitpause = 1
+
+[State 4601]
+type = PlaySnd
+trigger1 = AnimElem = 7,3
+value = s8,10
+volume = -50
+
+[State 4601]
+type = Explod
+trigger1 = AnimElem = 1
+anim = 2086
+postype = p1
+;pos = 0,0
+pos = 0,0
+sprpriority = 2
+bindtime = -1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4601
+
+[State 4601]
+type = ChangeState
+triggerall = root,movetype != H
+trigger1 = root,stateno = 2057
+trigger1 = root,animelem = 5,18
+value = 4606
+ctrl = 0
+
+;---------------------------------------------------------------------------
+; 新技・W・エフェクト・2-1
+[Statedef 4605]
+type    = A
+movetype= A
+physics = N
+;velset = 0,0
+anim = 2088
+ctrl = 0
+ownpal = 1
+sprpriority = 10
+
+[State 4605]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4605]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+supermovetime = 9999
+pausemovetime = 9999
+ignorehitpause = 1
+
+[State 4605]
+type = EnvShake
+trigger1 = AnimElem = 7
+time  = 30
+ampl  = 10
+freq  = 60
+
+[State 4605]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 4605]
+type = PlaySnd
+trigger1 = AnimElem = 6
+value = s9,20
+volume = -50
+
+[State 4605]
+type = PlaySnd
+trigger1 = AnimElem = 7
+value = s9,21
+volume = -50
+
+[State 4605]
+type = Explod
+trigger1 = time = 0
+anim = 2087
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .75, .75
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4605
+
+[State 4605]
+type = Explod
+trigger1 = AnimElem = 10
+anim = 1282
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .75, .75
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4605
+
+[State 4605]
+type = Hitdef
+trigger1 = time = 1
+attr = S, HA
+hitflag = MAF
+guardflag = 
+animtype = up
+;air.animtype = back
+damage = 100,10
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -15,0
+hitsound   = s1,5
+guardsound = s2,1
+ground.type = High
+priority = 7, Hit
+pausetime = 0,8
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -1,-10.5
+guard.velocity = -6.5
+air.velocity = -3,-9
+ground.cornerpush.veloff = 0
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = 0
+fall = 1
+fall.recover = 0
+envshake.time = 20
+envshake.ampl = 10
+envshake.freq = 60
+
+[State 4605]
+type = Projectile
+trigger1 = time = 1
+projid = 1284
+projanim = 1284
+projhitanim = -1
+projremanim = -1
+projpriority = 100
+projsprpriority = 10
+projremovetime = 20
+offset = 0,0
+attr = A, SP
+guardflag = M
+numhits = 0
+
+[State 4605]
+type = DestroySelf
+trigger1 = time = 45
+
+;---------------------------------------------------------------------------
+; 新技・W・エフェクト・2-2
+[Statedef 4606]
+type    = A
+movetype= A
+physics = N
+;velset = 0,0
+anim = 2088
+ctrl = 0
+ownpal = 1
+sprpriority = 10
+
+[State 4606]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4606]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+supermovetime = 9999
+pausemovetime = 9999
+ignorehitpause = 1
+
+[State 4606]
+type = EnvShake
+trigger1 = AnimElem = 7
+time  = 30
+ampl  = 10
+freq  = 60
+
+[State 4606]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 4606]
+type = PlaySnd
+trigger1 = AnimElem = 6
+value = s9,20
+volume = -50
+
+[State 4606]
+type = PlaySnd
+trigger1 = AnimElem = 7
+value = s9,21
+volume = -50
+
+[State 4606]
+type = Explod
+trigger1 = time = 0
+anim = 2087
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .75, .75
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4606
+
+[State 4606]
+type = Explod
+trigger1 = AnimElem = 10
+anim = 1282
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .75, .75
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4606
+
+[State 4606]
+type = Hitdef
+trigger1 = time = 1
+attr = S, HA
+hitflag = MAF
+guardflag = 
+animtype = up
+;air.animtype = back
+damage = 300,10
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -15,0
+hitsound   = s1,5
+guardsound = s2,1
+ground.type = High
+priority = 7, Hit
+pausetime = 0,8
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -1,-10.5
+guard.velocity = -6.5
+air.velocity = -3,-9
+ground.cornerpush.veloff = 0
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = 0
+fall = 1
+fall.recover = 0
+envshake.time = 20
+envshake.ampl = 10
+envshake.freq = 60
+
+[State 4606]
+type = Projectile
+trigger1 = time = 1
+projid = 1284
+projanim = 1284
+projhitanim = -1
+projremanim = -1
+projpriority = 100
+projsprpriority = 10
+projremovetime = 20
+offset = 0,0
+attr = A, SP
+guardflag = M
+numhits = 0
+
+[State 4606]
+type = DestroySelf
+trigger1 = time = 45
+
+;===========================================================================
+; ザラマンダー・エフェクト・上
+[Statedef 4650]
+type    = A
+movetype= A
+physics = N
+;velset = 0,0
+anim = 2150
+ctrl = 0
+ownpal = 1
+sprpriority = 10
+
+[State 4650]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 4650]
+Type = SuperPause
+Trigger1 = AnimElem = 1
+Anim = -1
+Time = 60
+MoveTime = 60
+P2DefMul = 1
+Darken = 0
+
+[State 4650]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4650]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+supermovetime = 9999
+pausemovetime = 9999
+ignorehitpause = 1
+
+[State 4650]
+type = AfterImage
+trigger1 = Time = 0 || Time = 20
+time = 10
+palmul = 1,1,1
+palcontrast = 140,140,160
+palbright = 0,0,80
+PalAdd = 20,20,30
+length = 10
+framegap = 3
+trans = add
+
+[State 4650]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+
+[State 4650]
+type = Veladd
+trigger1 = time = [1,9]
+x = -.6
+y = -.5
+
+[State 4650]
+type = VelSet
+trigger1 = time = 10
+x = 0
+y = 0
+
+[State 4650]
+type = Veladd
+trigger1 = time = [20,29]
+x = .5
+y = -.4
+
+[State 4650]
+type = VelSet
+trigger1 = time = 30
+x = 0
+y = 0
+
+[State 4650]
+type = VelSet
+trigger1 = time = 50
+x = 0
+y = 0
+
+[State 4650]
+type = Explod
+trigger1 = AnimElem = 7
+anim = 2151+(random%4)
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4650
+
+[State 4650]
+type = Explod
+trigger1 = AnimElem = 10
+anim = 1282
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4650
+
+[State 4650]
+type = DestroySelf
+trigger1 = time = 100
+
+;---------------------------------------------------------------------------
+; ザラマンダー・エフェクト・左
+[Statedef 4655]
+type    = A
+movetype= A
+physics = N
+;velset = 0,0
+anim = 2150
+ctrl = 0
+ownpal = 1
+sprpriority = 10
+
+[State 4655]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 4655]
+Type = SuperPause
+Trigger1 = AnimElem = 1
+Anim = -1
+Time = 60
+MoveTime = 60
+P2DefMul = 1
+Darken = 0
+
+[State 4655]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4655]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+supermovetime = 9999
+pausemovetime = 9999
+ignorehitpause = 1
+
+[State 4655]
+type = AfterImage
+trigger1 = Time = 0 || Time = 20
+time = 10
+palmul = 1,1,1
+palcontrast = 140,140,160
+palbright = 0,0,80
+PalAdd = 20,20,30
+length = 10
+framegap = 3
+trans = add
+
+[State 4655]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+
+[State 4655]
+type = Veladd
+trigger1 = time = [1,9]
+x = -.5
+y = .6
+
+[State 4655]
+type = VelSet
+trigger1 = time = 10
+x = 0
+y = 0
+
+[State 4655]
+type = Veladd
+trigger1 = time = [20,29]
+x = -.4
+y = -.5
+
+[State 4655]
+type = VelSet
+trigger1 = time = 30
+x = 0
+y = 0
+
+[State 4655]
+type = VelSet
+trigger1 = time = 50
+x = 0
+y = 0
+
+[State 4655]
+type = Explod
+trigger1 = AnimElem = 7
+anim = 2151+(random%4)
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4655
+
+[State 4655]
+type = Explod
+trigger1 = AnimElem = 10
+anim = 1282
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4655
+
+[State 4655]
+type = DestroySelf
+trigger1 = time = 100
+
+;---------------------------------------------------------------------------
+; ザラマンダー・エフェクト・上
+[Statedef 4660]
+type    = A
+movetype= A
+physics = N
+;velset = 0,0
+anim = 2150
+ctrl = 0
+ownpal = 1
+sprpriority = 10
+
+[State 4660]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 4660]
+Type = SuperPause
+Trigger1 = AnimElem = 1
+Anim = -1
+Time = 60
+MoveTime = 60
+P2DefMul = 1
+Darken = 0
+
+[State 4660]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4660]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+supermovetime = 9999
+pausemovetime = 9999
+ignorehitpause = 1
+
+[State 4660]
+type = AfterImage
+trigger1 = Time = 0 || Time = 20
+time = 10
+palmul = 1,1,1
+palcontrast = 140,140,160
+palbright = 0,0,80
+PalAdd = 20,20,30
+length = 10
+framegap = 3
+trans = add
+
+[State 4660]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+
+[State 4660]
+type = Veladd
+trigger1 = time = [1,9]
+x = .6
+y = .5
+
+[State 4660]
+type = VelSet
+trigger1 = time = 10
+x = 0
+y = 0
+
+[State 4660]
+type = Veladd
+trigger1 = time = [20,29]
+x = -.5
+y = .4
+
+[State 4660]
+type = VelSet
+trigger1 = time = 30
+x = 0
+y = 0
+
+[State 4660]
+type = VelSet
+trigger1 = time = 50
+x = 0
+y = 0
+
+[State 4660]
+type = Explod
+trigger1 = AnimElem = 7
+anim = 2151+(random%4)
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4660
+
+[State 4660]
+type = Explod
+trigger1 = AnimElem = 10
+anim = 1282
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4660
+
+[State 4660]
+type = DestroySelf
+trigger1 = time = 100
+
+;---------------------------------------------------------------------------
+; ザラマンダー・エフェクト・右
+[Statedef 4665]
+type    = A
+movetype= A
+physics = N
+;velset = 0,0
+anim = 2150
+ctrl = 0
+ownpal = 1
+sprpriority = 10
+
+[State 4665]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 4665]
+Type = SuperPause
+Trigger1 = AnimElem = 1
+Anim = -1
+Time = 60
+MoveTime = 60
+P2DefMul = 1
+Darken = 0
+
+[State 4665]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4665]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+supermovetime = 9999
+pausemovetime = 9999
+ignorehitpause = 1
+
+[State 4665]
+type = AfterImage
+trigger1 = Time = 0 || Time = 20
+time = 10
+palmul = 1,1,1
+palcontrast = 140,140,160
+palbright = 0,0,80
+PalAdd = 20,20,30
+length = 10
+framegap = 3
+trans = add
+
+[State 4665]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+
+[State 4665]
+type = Veladd
+trigger1 = time = [1,9]
+x = .5
+y = -.6
+
+[State 4665]
+type = VelSet
+trigger1 = time = 10
+x = 0
+y = 0
+
+[State 4665]
+type = Veladd
+trigger1 = time = [20,29]
+x = .4
+y = .5
+
+[State 4665]
+type = VelSet
+trigger1 = time = 30
+x = 0
+y = 0
+
+[State 4665]
+type = VelSet
+trigger1 = time = 50
+x = 0
+y = 0
+
+[State 4665]
+type = Explod
+trigger1 = AnimElem = 7
+anim = 2151+(random%4)
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4665
+
+[State 4665]
+type = Explod
+trigger1 = AnimElem = 10
+anim = 1282
+postype = p1
+pos = 0,0
+sprpriority = 9
+bindtime = -1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 0
+ID = 4665
+
+[State 4665]
+type = DestroySelf
+trigger1 = time = 100
+
+;---------------------------------------------------------------------------
+; ザラマンダー・エフェクト・ヒット関連
+[Statedef 4670]
+type    = A
+movetype= A
+physics = N
+;velset = 0,0
+anim = 2170
+ctrl = 0
+ownpal = 1
+sprpriority = -1
+
+[State 4670]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 4670]
+Type = SuperPause
+Trigger1 = AnimElem = 1
+Anim = -1
+Time = 60
+MoveTime = 60
+P2DefMul = 1
+Darken = 0
+
+[State 4670]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4670]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 4670]
+type = EnvShake
+trigger1 = AnimElem = 7
+time  = 15
+ampl  = 7
+freq  = 60
+
+[State 4670]
+type = PlaySnd
+trigger1 = AnimElem = 7 || AnimElem = 7,1
+value = s9,20
+volume = -50
+
+[State 4670]
+type = PlaySnd
+trigger1 = AnimElem = 7 || AnimElem = 7,1
+value = s9,21
+volume = -50
+
+[State 4670]
+type = Hitdef
+triggerall = p2movetype = A || enemy,movetype = A
+trigger1 = time = 1
+attr = A, HP
+hitflag = MAF
+guardflag = M
+animtype = up
+;air.animtype = back
+;damage = 200,30
+damage = ifelse((root,var(13)=1),Ceil(260+70*root,FVar(2)),Ceil(260+100*root,FVar(2)) ),30
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -15,0
+hitsound   = s1,5
+guardsound = s2,1
+ground.type = High
+priority = 7, Hit
+pausetime = 0,8
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -1,-10.5
+guard.velocity = -6.5
+air.velocity = -3,-9
+ground.cornerpush.veloff = 0
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = 0
+yaccel = .3
+fall = 1
+fall.recover = 0
+numhits = 1
+getpower = 0,0
+envshake.time = 20
+envshake.ampl = 10
+envshake.freq = 60
+
+[State 4670]
+type = Hitdef
+triggerall = p2movetype != A || enemy,movetype != A
+trigger1 = time = 1
+attr = A, HP
+hitflag = MAF
+guardflag = M
+animtype = up
+;air.animtype = back
+;damage = 200,30
+damage = ifelse((root,var(13)=1),Ceil(180+60*root,FVar(2)),Ceil(160+110*root,FVar(2)) ),30
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -15,0
+hitsound   = s1,5
+guardsound = s2,1
+ground.type = High
+priority = 7, Hit
+pausetime = 0,8
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -1,-10.5
+guard.velocity = -6.5
+air.velocity = -3,-9
+ground.cornerpush.veloff = 0
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = 0
+yaccel = .3
+fall = 1
+fall.recover = 0
+numhits = 1
+getpower = 0,0
+envshake.time = 20
+envshake.ampl = 10
+envshake.freq = 60
+
+[State 4670]
+type = Projectile
+trigger1 = time = 1
+projid = 2175
+projanim = 2175
+projhitanim = -1
+projremanim = -1
+projpriority = 100
+projsprpriority = 10
+projremovetime = 20
+offset = 0,0
+attr = A, SP
+guardflag = M
+numhits = 0
+
+[State 4670]
+type = DestroySelf
+trigger1 = time = 100
+
+;---------------------------------------------------------------------------
+; ザラマンダー・エフェクト・ヒット関連・12P
+[Statedef 4675]
+type    = A
+movetype= A
+physics = N
+;velset = 0,0
+anim = 2170
+ctrl = 0
+ownpal = 1
+sprpriority = -1
+
+[State 4675]
+type = RemoveExplod
+trigger1 = time = 0
+
+[State 4675]
+Type = SuperPause
+Trigger1 = AnimElem = 1
+Anim = -1
+Time = 60
+MoveTime = 60
+P2DefMul = 1
+Darken = 0
+
+[State 4675]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4675]
+type = EnvShake
+trigger1 = AnimElem = 7
+time  = 15
+ampl  = 7
+freq  = 60
+
+[State 4675]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 4675]
+type = PlaySnd
+trigger1 = AnimElem = 7 || AnimElem = 7,1
+value = s9,20
+volume = -50
+
+[State 4675]
+type = PlaySnd
+trigger1 = AnimElem = 7 || AnimElem = 7,1
+value = s9,21
+volume = -50
+
+[State 4675]
+type = Hitdef
+trigger1 = time = 1
+attr = A, HP
+hitflag = MAF
+guardflag = M
+animtype = up
+;air.animtype = back
+damage = 700,50
+sparkno = s7330+(random%7)
+guard.sparkno = s7360+(random%2)
+sparkxy = -15,0
+hitsound   = s1,5
+guardsound = s2,1
+ground.type = High
+priority = 7, Hit
+pausetime = 0,8
+ground.slidetime = 14
+ground.hittime = 19
+ground.velocity = -1,-10.5
+guard.velocity = -6.5
+air.velocity = -3,-9
+ground.cornerpush.veloff = 0
+air.cornerpush.veloff = -0
+guard.cornerpush.veloff = 0
+yaccel = .3
+fall = 1
+fall.recover = 0
+numhits = 1
+envshake.time = 20
+envshake.ampl = 10
+envshake.freq = 60
+
+[State 4675]
+type = Projectile
+trigger1 = time = 1
+projid = 2175
+projanim = 2175
+projhitanim = -1
+projremanim = -1
+projpriority = 100
+projsprpriority = 10
+projremovetime = 20
+offset = 0,0
+attr = A, SP
+guardflag = M
+numhits = 0
+
+[State 4675]
+type = DestroySelf
+trigger1 = time = 100
+
+
+;===========================================================================
+; シュメルツ・エフェクト・1-1
+[Statedef 4700]
+type    = A
+movetype= A
+physics = N
+velset = 0,0
+anim = 9999
+ctrl = 0
+ownpal = 1
+sprpriority = -1
+
+[State 4700]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4700]
+type = Explod
+trigger1 = time = 0
+anim = 2250
+postype = p1
+pos = 0,10
+sprpriority = 10
+bindtime = -1
+ownpal = 1
+scale = .8, .8
+removeongethit = 1
+IgnoreHitPause = 0
+
+[State 4700]
+type = Explod
+trigger1 = time = 0
+anim = 2251
+postype = p1
+pos = -15,0
+sprpriority = 10
+bindtime = -1
+ownpal = 1
+scale = 1.2, 1.2
+removeongethit = 1
+IgnoreHitPause = 0
+
+[State 4700]
+type = Explod
+trigger1 = time = 0
+anim = 2252
+postype = p1
+pos = -15,5
+sprpriority = 10
+bindtime = -1
+ownpal = 1
+scale = .8, .8
+removeongethit = 1
+IgnoreHitPause = 0
+
+[State 4700]
+type = DestroySelf
+trigger1 = time = 40
+
+;---------------------------------------------------------------------------
+; シュメルツ・エフェクト・2
+[Statedef 4705]
+type    = A
+movetype= A
+physics = N
+velset = 0,0
+anim = 9999
+ctrl = 0
+ownpal = 1
+sprpriority = 11
+
+[State 4705]
+type = Explod
+trigger1 = time = 0
+anim = 2253
+postype = p1
+pos = 25,10
+sprpriority = 10
+bindtime = -1
+ownpal = 1
+facing = -1
+scale = 1.8, 1.8
+removeongethit = 1
+IgnoreHitPause = 0
+
+[State 4705]
+type = DestroySelf
+;trigger1 = AnimTime = 0
+trigger1 = time = 40
+
+
+;===========================================================================
+; 新技・X・エフェクト・1
+[Statedef 4710]
+type    = A
+movetype= I
+physics = N
+velset = 0,0
+anim = 9999
+ctrl = 0
+ownpal = 1
+sprpriority = 2
+
+[State 4710]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+;-----0------
+[State 4710]
+type = Explod
+trigger1 = time = 1
+anim = 2410
+postype = P1
+pos = -200,150
+sprpriority = 5
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 100,0
+ID = 2410
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 11
+ID = 2410
+vel = 0,0
+postype = P1
+pos = 800,150
+;----------
+;-----1------
+[State 4710]
+type = Explod
+trigger1 = time = 5
+anim = 2411
+postype = P1
+pos = 300,180
+sprpriority = 6
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -83,25
+ID = 2411
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 15
+ID = 2411
+vel = 0,0
+postype = P1
+pos = -530,430
+;----------
+;-----2------
+[State 4710]
+type = Explod
+trigger1 = time = 10
+anim = 2412
+postype = P1
+pos = -380,-300
+sprpriority = 7
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 90,74
+ID = 2412
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 20
+ID = 2412
+vel = 0,0
+postype = P1
+pos = 520,440
+;----------
+;-----3------
+[State 4710]
+type = Explod
+trigger1 = time = 15
+anim = 2413
+postype = P1
+pos = 175,430
+sprpriority = 8
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 30,-98.5
+ID = 2413
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 25
+ID = 2413
+vel = 0,0
+postype = P1
+pos = 475,-555
+;----------
+;-----4------
+[State 4710]
+type = Explod
+trigger1 = time = 20
+anim = 2414
+postype = P1
+pos = -170,300
+sprpriority = 9
+bindtime = 1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 85.2,-70
+ID = 2414
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 30
+ID = 2414
+vel = 0,0
+postype = P1
+pos = 681,-400
+;----------
+;-----5------
+[State 4710]
+type = Explod
+trigger1 = time = 25
+anim = 2415
+postype = P1
+pos = 300,30
+sprpriority = 10
+bindtime = 1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -90,8.8
+ID = 2415
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 35
+ID = 2415
+vel = 0,0
+postype = P1
+pos = -600,118
+;----------
+;-----6------
+[State 4710]
+type = Explod
+trigger1 = time = 30
+anim = 2416
+postype = P1
+pos = 120,400
+sprpriority = 11
+bindtime = 1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 10,-100
+ID = 2416
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 40
+ID = 2416
+vel = 0,0
+postype = P1
+pos = 220,-600
+;----------
+;-----7------
+[State 4710]
+type = Explod
+trigger1 = time = 35
+anim = 2417
+postype = P1
+pos = 670,-300
+sprpriority = 12
+bindtime = 1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -80,66
+ID = 2417
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 45
+ID = 2417
+vel = 0,0
+postype = P1
+pos = -130,360
+;----------
+;-----8------
+[State 4710]
+type = Explod
+trigger1 = time = 40
+anim = 2418
+postype = P1
+pos = 182,400
+sprpriority = 13
+bindtime = 1
+ownpal = 1
+scale = .7, .7
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -27,-90
+ID = 2418
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 50
+ID = 2418
+vel = 0,0
+postype = P1
+pos = -88,-500
+;----------
+;-----9------
+[State 4710]
+type = Explod
+trigger1 = time = 45
+anim = 2419
+postype = P1
+pos = -200,60
+sprpriority = 14
+bindtime = 1
+ownpal = 1
+scale = .7, .7
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 80,24
+ID = 2419
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 55
+ID = 2419
+vel = 0,0
+postype = P1
+pos = 600,300
+;----------
+;-----10------
+[State 4710]
+type = Explod
+trigger1 = time = 50
+anim = 2420
+postype = P1
+pos = -130,-400
+sprpriority = 15
+bindtime = 1
+ownpal = 1
+scale = .7, .7
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 42.5,80
+ID = 2420
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 60
+ID = 2420
+vel = 0,0
+postype = P1
+pos = 295,400
+;----------
+;-----11------
+[State 4710]
+type = Explod
+trigger1 = time = 55
+anim = 2421
+postype = P1
+pos = 700,-167
+sprpriority = 16
+bindtime = 1
+ownpal = 1
+scale = .7, .7
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -80,42.7
+ID = 2421
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 65
+ID = 2421
+vel = 0,0
+postype = P1
+pos = -100,260
+;----------
+;-----12------
+[State 4710]
+type = Explod
+trigger1 = time = 60
+anim = 2422
+postype = P1
+pos = 76,600
+sprpriority = 17
+bindtime = 1
+ownpal = 1
+scale = .8, .8
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 30.4,-100
+ID = 2422
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 70
+ID = 2422
+vel = 0,0
+postype = P1
+pos = 380,-400
+;----------
+;-----13------
+[State 4710]
+type = Explod
+trigger1 = time = 65
+anim = 2423
+postype = P1
+pos = 600,83
+sprpriority = 18
+bindtime = 1
+ownpal = 1
+scale = .8, .8
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -110,0
+ID = 2423
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 75
+ID = 2423
+vel = 0,0
+postype = P1
+pos = -500,83
+;----------
+;-----14------
+[State 4710]
+type = Explod
+trigger1 = time = 70
+anim = 2424
+postype = P1
+pos = -310,-400
+sprpriority = 19
+bindtime = 1
+ownpal = 1
+scale = .8, .8
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 80,80
+ID = 2424
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 80
+ID = 2424
+vel = 0,0
+postype = P1
+pos = 490,400
+;----------
+;-----15------
+[State 4710]
+type = Explod
+trigger1 = time = 75
+anim = 2425
+postype = P1
+pos = 50,400
+sprpriority = 20
+bindtime = 1
+ownpal = 1
+scale = .8, .8
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 0,-110
+ID = 2425
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 85
+ID = 2425
+vel = 0,0
+postype = P1
+pos = 50,-600
+;----------
+;-----16------
+[State 4710]
+type = Explod
+trigger1 = time = 80
+anim = 2426
+postype = P1
+pos = -490,-480
+sprpriority = 21
+bindtime = 1
+ownpal = 1
+scale = .9, .9
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 80,98
+ID = 2426
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 90
+ID = 2426
+vel = 0,0
+postype = P1
+pos = 310,500
+;----------
+;-----17------
+[State 4710]
+type = Explod
+trigger1 = time = 82
+anim = 2427
+postype = P1
+pos = 650,-300
+sprpriority = 22
+bindtime = 1
+ownpal = 1
+scale = 1, 1
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -80,97
+ID = 2427
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 92
+ID = 2427
+vel = 0,0
+postype = P1
+pos = -150,670
+;----------
+;-----18------
+[State 4710]
+type = Explod
+trigger1 = time = 84
+anim = 2428
+postype = P1
+pos = 870,-1200
+sprpriority = 23
+bindtime = 1
+ownpal = 1
+scale = .4, .4
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -80,150
+ID = 2428
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 94
+ID = 2428
+vel = 0,0
+postype = P1
+pos = 70,300
+;----------
+;-----19------
+[State 4710]
+type = Explod
+trigger1 = time = 86
+anim = 2429
+postype = P1
+pos = 1050,800
+sprpriority = 24
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -150,-100
+ID = 2429
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 96
+ID = 2429
+vel = 0,0
+postype = P1
+pos = -450,-200
+;----------
+;-----20------
+[State 4710]
+type = Explod
+trigger1 = time = 88
+anim = 2430
+postype = P1
+pos = -490,-1200
+sprpriority = 25
+bindtime = 1
+ownpal = 1
+scale = .6, .6
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 85,160
+ID = 2430
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 98
+ID = 2430
+vel = 0,0
+postype = P1
+pos = 360,400
+;----------
+;-----21------
+[State 4710]
+type = Explod
+trigger1 = time = 90
+anim = 2431
+postype = P1
+pos = -170,300
+sprpriority = 26
+bindtime = 1
+ownpal = 1
+scale = .7, .7
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 85.2,-70
+ID = 2431
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 100
+ID = 2431
+vel = 0,0
+postype = P1
+pos = 681,-400
+;----------
+;-----22------
+[State 4710]
+type = Explod
+trigger1 = time = 92
+anim = 2432
+postype = P1
+pos = 700,-107
+sprpriority = 27
+bindtime = 1
+ownpal = 1
+scale = .8, .8
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -80,42.7
+ID = 2432
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 102
+ID = 2432
+vel = 0,0
+postype = P1
+pos = -100,320
+;----------
+;-----23------
+[State 4710]
+type = Explod
+trigger1 = time = 94
+anim = 2433
+postype = P1
+pos = 180,600
+sprpriority = 28
+bindtime = 1
+ownpal = 1
+scale = .9, .9
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -28,-140
+ID = 2433
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 104
+ID = 2433
+vel = 0,0
+postype = P1
+pos = -100,-800
+;----------
+;-----24------
+[State 4710]
+type = Explod
+trigger1 = time = 96
+anim = 2434
+postype = P1
+pos = -400,-300
+sprpriority = 29
+bindtime = 1
+ownpal = 1
+scale = 1, 1
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 150,100
+ID = 2434
+
+[State 4710]
+type = ModifyExplod
+trigger1 = time = 106
+ID = 2434
+vel = 0,0
+postype = P1
+pos = 1100,700
+;----------
+
+[State 4710]
+type = DestroySelf
+;trigger1 = AnimTime = 0
+trigger1 = time = 400
+
+;---------------------------------------------------------------------------
+; 新技・X・エフェクト・2
+[Statedef 4715]
+type    = A
+movetype= I
+physics = N
+velset = 0,0
+anim = 9999
+ctrl = 0
+ownpal = 1
+sprpriority = 2
+
+[State 4715]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4715]
+type = Explod
+trigger1 = Time = 1
+postype = p2
+pos = -5, -65
+sprpriority = 30
+anim = 7340+(random%7)
+bindtime = -1
+persistent = 1
+ownpal = 1
+removeongethit = 1
+supermovetime = 99999
+scale = 1, 1
+
+
+[State 4715]
+type = DestroySelf
+trigger1 = AnimTime = 0
+
+[State 4715]
+type = DestroySelf
+trigger1 = AnimTime = 0
+
+
+;---------------------------------------------------------------------------
+; 新技・X・エフェクト・3
+[Statedef 4716]
+type    = A
+movetype= I
+physics = N
+velset = 0,0
+anim = 9999
+ctrl = 0
+ownpal = 1
+sprpriority = 2
+
+[State 4716]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+[State 4716]
+type = Explod
+trigger1 = Time = 1
+postype = p2
+pos = -5, -65
+sprpriority = 30
+anim = 7350+(random%7)
+bindtime = -1
+persistent = 1
+ownpal = 1
+removeongethit = 1
+supermovetime = 99999
+scale = 1, 1
+
+
+[State 4716]
+type = DestroySelf
+trigger1 = AnimTime = 0
+
+;===========================================================================
+; ヴォルケン・エフェクト・1
+[Statedef 4720]
+type    = A
+movetype= I
+physics = N
+velset = 0,0
+anim = 9999
+ctrl = 0
+ownpal = 1
+sprpriority = 2
+
+[State 4720]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+;-----0------
+[State 4720]
+type = Explod
+trigger1 = time = 3
+anim = 2580
+postype = P1
+pos = -200,-80
+sprpriority = 5
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 100,10
+ID = 2580
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 13
+ID = 2580
+vel = 0,0
+postype = P1
+pos = 800,20
+;----------
+;-----1------
+[State 4720]
+type = Explod
+trigger1 = time = 19
+anim = 2581
+postype = P1
+pos = 300,-80
+sprpriority = 6
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -100,-10
+ID = 2581
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 29
+ID = 2581
+vel = 0,0
+postype = P1
+pos = -700,-180
+;----------
+;-----2------
+[State 4720]
+type = Explod
+trigger1 = time = 33
+anim = 2582
+postype = P1
+pos = 300,-100
+sprpriority = 7
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -90,-18
+ID = 2582
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 43
+ID = 2582
+vel = 0,0
+postype = P1
+pos = -600,-280
+;----------
+;-----3------
+[State 4720]
+type = Explod
+trigger1 = time = 42
+anim = 2583
+postype = P1
+pos = -30,50
+sprpriority = 8
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 50,-75
+ID = 2583
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 52
+ID = 2583
+vel = 0,0
+postype = P1
+pos = 470,-700
+;----------
+;-----4------
+[State 4720]
+type = Explod
+trigger1 = time = 54
+anim = 2584
+postype = P1
+pos = -180,40
+sprpriority = 9
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 72,-59
+ID = 2584
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 64
+ID = 2584
+vel = 0,0
+postype = P1
+pos = 540,-550
+;----------
+;-----5------
+[State 4720]
+type = Explod
+trigger1 = time = 63
+anim = 2585
+postype = P1
+pos = -150,-700
+sprpriority = 10
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 40,74
+ID = 2585
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 73
+ID = 2585
+vel = 0,0
+postype = P1
+pos = 250,40
+;----------
+;-----6------
+[State 4720]
+type = Explod
+trigger1 = time = 77
+anim = 2586
+postype = P1
+pos = -80,-700
+sprpriority = 11
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 33,80
+ID = 2586
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 87
+ID = 2586
+vel = 0,0
+postype = P1
+pos = 250,100
+;----------
+;-----7------
+[State 4720]
+type = Explod
+trigger1 = time = 99
+anim = 2587
+postype = P1
+pos = 250,-50
+sprpriority = 12
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -40,-74
+ID = 2587
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 109
+ID = 2587
+vel = 0,0
+postype = P1
+pos = -150,-790
+;----------
+;-----8------
+[State 4720]
+type = Explod
+trigger1 = time = 110
+anim = 2588
+postype = P1
+pos = -40,50
+sprpriority = 13
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 31,-75
+ID = 2588
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 120
+ID = 2588
+vel = 0,0
+postype = P1
+pos = 270,-700
+;----------
+;-----9------
+[State 4720]
+type = Explod
+trigger1 = time = 128
+anim = 2589
+postype = P1
+pos = 300,-400
+sprpriority = 14
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -80,24
+ID = 2589
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 138
+ID = 2589
+vel = 0,0
+postype = P1
+pos = -500,-160
+;----------
+;-----10------
+[State 4720]
+type = Explod
+trigger1 = time = 143
+anim = 2590
+postype = P1
+pos = 300,-380
+sprpriority = 15
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -80,0
+ID = 2590
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 155
+ID = 2590
+vel = 0,0
+postype = P1
+pos = -500,-380
+;----------
+;-----11------
+[State 4720]
+type = Explod
+trigger1 = time = 152
+anim = 2591
+postype = P1
+pos = -260,50
+sprpriority = 16
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 67,-82
+ID = 2591
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 162
+ID = 2591
+vel = 0,0
+postype = P1
+pos = 410,-770
+;----------
+;-----12------
+[State 4720]
+type = Explod
+trigger1 = time = 163
+anim = 2592
+postype = P1
+pos = -300,-500
+sprpriority = 17
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 90,18
+ID = 2592
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 173
+ID = 2592
+vel = 0,0
+postype = P1
+pos = 600,-320
+;----------
+;-----13------
+[State 4720]
+type = Explod
+trigger1 = time = 185
+anim = 2593
+postype = P1
+pos = 300,-540
+sprpriority = 18
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -80,24
+ID = 2593
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 199
+ID = 2593
+vel = 0,0
+postype = P1
+pos = -500,-300
+;----------
+;-----14------
+[State 4720]
+type = Explod
+trigger1 = time = 204
+anim = 2594
+postype = P1
+pos = 300,-440
+sprpriority = 19
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -74,-31
+ID = 2594
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 214
+ID = 2594
+vel = 0,0
+postype = P1
+pos = -440,-750
+;----------
+;-----15------
+[State 4720]
+type = Explod
+trigger1 = time = 211
+anim = 2595
+postype = P1
+pos = -390,-150
+sprpriority = 20
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 72,-59
+ID = 2595
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 221
+ID = 2595
+vel = 0,0
+postype = P1
+pos = 330,-740
+;----------
+;-----16------
+[State 4720]
+type = Explod
+trigger1 = time = 228
+anim = 2596
+postype = P1
+pos = -220,-150
+sprpriority = 21
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = 67,-82
+ID = 2596
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 238
+ID = 2596
+vel = 0,0
+postype = P1
+pos = 450,-970
+;----------
+;-----17------
+[State 4720]
+type = Explod
+trigger1 = time = 246
+anim = 2597
+postype = P1
+pos = 300,-650
+sprpriority = 22
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -100,10
+ID = 2597
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 256
+ID = 2597
+vel = 0,0
+postype = P1
+pos = -700,-550
+;----------
+;-----18------
+[State 4720]
+type = Explod
+trigger1 = time = 263
+anim = 2598
+postype = P1
+pos = 300,-670
+sprpriority = 22
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+vel = -100,0
+ID = 2598
+
+[State 4720]
+type = ModifyExplod
+trigger1 = time = 273
+ID = 2598
+vel = 0,0
+postype = P1
+pos = -700,-670
+;----------
+
+[State 4720]
+type = DestroySelf
+trigger1 = time = 400
+
+
+
+;---------------------------------------------------------------------------
+; ヴォルケン・エフェクト・2
+[Statedef 4721]
+type    = A
+movetype= I
+physics = N
+velset = 0,0
+anim = 9999
+ctrl = 0
+ownpal = 1
+sprpriority = 2
+
+[State 4721]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+;----------------------
+;-----0------
+[State 4721]
+type = Explod
+trigger1 = time = 6
+anim = 7340+(random%7)
+postype = P1
+pos = 105,-51
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----1------
+[State 4721]
+type = Explod
+trigger1 = time = 21
+anim = 7340+(random%7)
+postype = P1
+pos = 125,-95
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----2------
+[State 4721]
+type = Explod
+trigger1 = time = 35
+anim = 7340+(random%7)
+postype = P1
+pos = 120,-140
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----3------
+[State 4721]
+type = Explod
+trigger1 = time = 45
+anim = 7340+(random%7)
+postype = P1
+pos = 115,-160
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----4------
+[State 4721]
+type = Explod
+trigger1 = time = 58
+anim = 7340+(random%7)
+postype = P1
+pos = 110,-190
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----5------
+[State 4721]
+type = Explod
+trigger1 = time = 70
+anim = 7340+(random%7)
+postype = P1
+pos = 115,-210
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----6------
+[State 4721]
+type = Explod
+trigger1 = time = 83
+anim = 7340+(random%7)
+postype = P1
+pos = 110,-240
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----7------
+[State 4721]
+type = Explod
+trigger1 = time = 102
+anim = 7340+(random%7)
+postype = P1
+pos = 130,-280
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----8------
+[State 4721]
+type = Explod
+trigger1 = time = 115
+anim = 7340+(random%7)
+postype = P1
+pos = 110,-310
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----9------
+[State 4721]
+type = Explod
+trigger1 = time = 130
+anim = 7340+(random%7)
+postype = P1
+pos = 125,-345
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----10------
+[State 4721]
+type = Explod
+trigger1 = time = 145
+anim = 7340+(random%7)
+postype = P1
+pos = 135,-375
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----11------
+[State 4721]
+type = Explod
+trigger1 = time = 158
+anim = 7340+(random%7)
+postype = P1
+pos = 105,-395
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----12------
+[State 4721]
+type = Explod
+trigger1 = time = 168
+anim = 7340+(random%7)
+postype = P1
+pos = 110,-420
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----13------
+[State 4721]
+type = Explod
+trigger1 = time = 188
+anim = 7340+(random%7)
+postype = P1
+pos = 130,-490
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----14------
+[State 4721]
+type = Explod
+trigger1 = time = 207
+anim = 7340+(random%7)
+postype = P1
+pos = 110,-525
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----15------
+[State 4721]
+type = Explod
+trigger1 = time = 218
+anim = 7340+(random%7)
+postype = P1
+pos = 100,-545
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----16------
+[State 4721]
+type = Explod
+trigger1 = time = 233
+anim = 7340+(random%7)
+postype = P1
+pos = 120,-570
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----17------
+[State 4721]
+type = Explod
+trigger1 = time = 248
+anim = 7340+(random%7)
+postype = P1
+pos = 130,-630
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----18------
+[State 4721]
+type = Explod
+trigger1 = time = 265
+anim = 7340+(random%7)
+postype = P1
+pos = 120,-670
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;-----19------
+[State 4721]
+type = Explod
+trigger1 = time = 305
+anim = 7340+(random%7)
+postype = P1
+pos = 70,-680
+sprpriority = 30
+bindtime = 1
+ownpal = 1
+;scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+;----------
+;----------------------
+;----------
+[State 4721]
+type = EnvShake
+trigger1=time=6||time=21||time=35||time=45||time=58||time=70||time=83||time=102||time=115||time=130
+trigger2=time=145||time=158||time=168||time=188||time=207||time=218||time=233||time=248||time=265
+trigger3=time=305
+time  = 15
+ampl  = 7
+freq  = 30
+;----------
+[State 4721]
+type = PlaySnd
+trigger1=time=6||time=21||time=35||time=45||time=58||time=70||time=83||time=102||time=115||time=130
+trigger2=time=145||time=158||time=168||time=188||time=207||time=218||time=233||time=248||time=265
+trigger3=time=305
+value = s1,2
+volume = -100
+;----------
+[State 4721]
+type = HitAdd
+trigger1=time=6||time=21||time=35||time=45||time=58||time=70||time=83||time=102||time=115||time=130
+trigger2=time=145||time=158||time=168||time=188||time=207||time=218||time=233||time=248||time=265
+trigger3=time=305
+value = 1
+;----------------------
+
+
+;----------------------
+
+[State 4721]
+type = DestroySelf
+trigger1 = time = 400
+
+;---------------------------------------------------------------------------
+; ヴォルケン・エフェクト・3
+[Statedef 4725]
+type    = A
+movetype= I
+physics = N
+velset = 0,0
+anim = 9999
+ctrl = 0
+ownpal = 1
+sprpriority = 2
+
+[State 4725]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+;-----------
+[State 4725]
+type = Explod
+trigger1 = time = 0
+anim = 2540
+postype = P1
+pos = 30,-140
+sprpriority = 22
+bindtime = 1
+ownpal = 1
+scale = .5, 1
+removeongethit = 1
+IgnoreHitPause = 1
+;vel = -12,15
+ID = 2540
+
+[State 4725]
+type = ModifyExplod
+trigger1 = time = 8
+ID = 2540
+;vel = -30,35
+postype = P1
+pos = -5,-90
+
+[State 4725]
+type = ModifyExplod
+trigger1 = time = 11
+ID = 2540
+;vel = -30,35
+postype = P1
+pos = -66,-28
+
+[State 4725]
+type = ModifyExplod
+trigger1 = time = 14
+ID = 2540
+;vel = -30,35
+postype = P1
+pos = -130,15
+
+;----------
+
+[State 2520]
+type = Explod
+trigger1 = time = 11
+anim = 2541
+postype = back
+pos = -200,-50
+sprpriority = 99999
+bindtime = -1
+ownpal = 1
+scale = .8, 1
+removeongethit = 1
+IgnoreHitPause = 1
+
+[State 2520]
+type = Explod
+trigger1 = time = 11
+anim = 2542
+postype = back
+pos = -200,-50
+sprpriority = 99999
+bindtime = -1
+ownpal = 1
+scale = .8, 1
+removeongethit = 1
+IgnoreHitPause = 1
+
+
+;----------
+
+[State 4725]
+type = DestroySelf
+trigger1 = time = 100
+
+;---------------------------------------------------------------------------
+; ヴォルケン・エフェクト・4
+[Statedef 4730]
+type    = A
+movetype= I
+physics = N
+velset = 0,0
+anim = 9999
+ctrl = 0
+ownpal = 1
+sprpriority = 2
+
+[State 4730]
+type = NotHitBy
+trigger1 = 1
+value = SAC, NT, ST, HT ,NA, SA, HA ,NP, SP, HP
+time = 1
+
+;-----------
+[State 4730]
+type = Explod
+trigger1 = time = 0
+anim = 2539
+postype = P1
+pos = 0,0
+sprpriority = 3
+bindtime = 1
+ownpal = 1
+scale = .5, .5
+removeongethit = 1
+IgnoreHitPause = 1
+supermovetime = 99999
+
+;----------
+
+[State 4730]
+type = DestroySelf
+trigger1 = time = 100
+
+;--------------
+;---------------------------------------------------------------------------
+;===========================================================================
