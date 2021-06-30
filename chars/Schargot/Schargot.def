@@ -1,0 +1,40 @@
+[Info]
+Name         = "Scharlachrot"
+DisplayName  = "Scharlachrot"
+VersionDate  = 07,31,2000
+MugenVersion = 1.1
+Author       = "aki"
+Pal.Defaults = 1,2,3,4
+
+[Files]
+cmd = Scharlachrot_A.cmd
+cns = Scharlachrot_A0-0.cns
+st  = Scharlachrot_A0-0.cns
+st1 = Scharlachrot_A1-0.cns
+st2 = Scharlachrot_A1-1.cns
+st3 = Scharlachrot_A2-0.cns 
+st4 = Scharlachrot_A2-1.cns 
+st5 = Scharlachrot_A3-0.cns 
+st6 = Scharlachrot_A4-0.cns 
+st7 = Scharlachrot_A5-0.cns 
+st8 = Scharlachrot_A6-0.cns 
+st9 = Scharlachrot_A6-1.cns  
+
+stcommon  = common1.cns 
+sprite    = Scharlachrot_A.sff
+anim      = Scharlachrot_A.air
+sound     = Scharlachrot_A.snd
+
+[Palette Keymap]
+x = 1 ;Press button X to select palette 1, etc.
+y = 2
+z = 3
+a = 4
+b = 5
+c = 6
+;x2 = 7 ;Hold Start and press button X for palette 7, etc.
+;y2 = 8
+;z2 = 9
+;a2 = 10
+;b2 = 11
+;c2 = 12
