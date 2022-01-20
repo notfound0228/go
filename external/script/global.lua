@@ -144,7 +144,7 @@ function boolToInt(bool)
 end
 
 function engineInfo()
-	return string.format('VSync: %d; Speed: %d%%', vsync(), gamespeed())
+	return string.format('VSync: %d; Speed: %d/%d%%', vsync(), gameLogicSpeed(), gamespeed())
 end
 
 function playerInfo()
@@ -174,6 +174,7 @@ local endFlag = false
 
 --function called during match via config.json CommonLua
 function loop()
+	hook.run("loop.start")
 	if start == nil then --match started via command line without -loadmotif flag
 		if esc() then
 			endMatch()
@@ -208,16 +209,26 @@ function loop()
 			if indialogue() then
 				dialogueReset()
 			end
+			if gamemode('training') then
+				menu.f_trainingReset()
+			end
 		end
 		start.turnsRecoveryInit = false
 		start.rankInit = false
 		start.dialogueInit = false
 	end
+	if winnerteam() ~= -1 and player(winnerteam()) and roundstate() == 4 then
+		--turns life recovery
+		start.f_turnsRecovery()
+		--rank
+		start.f_rank()
+	end
 	--dialogue
 	if indialogue() then
 		start.f_dialogue()
+		hook.run("loop.dialog")
 	--match end
-	elseif matchover() and roundover() then
+	elseif roundstate() == -1 then
 		if not endFlag then
 			resetMatchData(false)
 			endFlag = true
@@ -232,19 +243,17 @@ function loop()
 		elseif start.f_continue() then
 			return
 		end
+		clearColor(motif.selectbgdef.bgclearcolor[1], motif.selectbgdef.bgclearcolor[2], motif.selectbgdef.bgclearcolor[3])
 		togglePostMatch(false)
 	end
-	if winnerteam() ~= -1 and player(winnerteam()) and roundstate() == 4 then
-		--turns life recovery
-		start.f_turnsRecovery()
-		--rank
-		start.f_rank()
-	end
+	hook.run("loop." .. gamemode() .. "#always")
 	--pause menu
 	if main.pauseMenu then
 		playerBufReset()
 		menu.f_run()
+		hook.run("loop.pause")
 	else
+		hook.run("loop." .. gamemode())
 		main.f_cmdInput()
 		--esc / m
 		if (esc() or (main.f_input(main.t_players, {'m'})) and not network()) and not start.challengerInit then
@@ -254,7 +263,7 @@ function loop()
 				menu.f_init()
 			end
 		--demo mode
-		elseif gamemode('demo') and ((motif.attract_mode.enabled == 1 and main.credits > 0 and not getSoundPlaying(motif.files.snd_data, motif.attract_mode.credits_snd[1], motif.attract_mode.credits_snd[2])) or (motif.attract_mode.enabled == 0 and main.f_input(main.t_players, {'pal'})) or gametime() >= motif.demo_mode.fight_endtime) then
+		elseif gamemode('demo') and ((motif.attract_mode.enabled == 1 and main.credits > 0 and not sndPlaying(motif.files.snd_data, motif.attract_mode.credits_snd[1], motif.attract_mode.credits_snd[2])) or (motif.attract_mode.enabled == 0 and main.f_input(main.t_players, {'pal'})) or gametime() >= motif.demo_mode.fight_endtime) then
 			endMatch()
 		--challenger
 		elseif gamemode('arcade') then
