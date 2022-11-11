@@ -1,4 +1,4 @@
-﻿; Definition of fight screen
+; Definition of fight screen
 
 ; *** DO NOT MODIFY OR OVERWRITE THIS FILE ***
 ; To customize, make a copy of this file in a subdirectory of your
@@ -13,7 +13,8 @@
 ;     3. data/ (not recommended to keep custom fonts here)
 ;     4. font/
 ;
-; See the section "How to Customize" at the end of this file.
+; See the section "How to Customize" at the end of
+; this file.
 
 ;-----------------------------------------------------------
 ; Ikemen feature
@@ -43,29 +44,59 @@ scale = 1
 ;-----------------------------------------------------------
 [Lifebar]
 ;Player 1
-p1.pos    = 140,12
-p1.bg0.anim = 10
-p1.bg1.spr = 11,0
+p1.pos    = 120,18
+p1.bg0.spr = 10,0
+p1.bg0.scale = .34, .35
+p1.bg0.offset = 8, 5
+p1.bg0.layerno = -1
+p1.bg1.spr = 14,0
+p1.bg1.scale = .33, .35
+p1.bg1.offset = 1.5, 0
+p1.bg1.layerno = -1
+p1.bg2.spr = 15,0
+p1.bg2.scale = .35, .35
+p1.bg2.offset = -4, -3.2
+p1.bg2.layerno = 0
 p1.mid.spr = 12,0
+p1.mid.scale = .34, .35
+p1.mid.offset = 5, 0
+p1.mid.layerno = -1
 p1.front.spr = 13,0
-p1.shift.spr = 13,10   ;Ikemen feature
-p1.range.x  = 0,-127
+p1.front.scale = .34, .35
+p1.front.offset = 4, 0
+p1.front.layerno = -1
+;p1.shift.spr = 13,10   ;Ikemen feature
+p1.range.x  = 0,-117
 ;Player 2
-p2.pos    = 178,12
-p2.bg0.anim = 10
+p2.pos    = 198,18
+p2.bg0.spr = 10,0
+p2.bg0.scale = .34, .35
+p2.bg0.offset = -8, 5
 p2.bg0.facing = -1
-p2.bg1.spr = 11,0
+p2.bg0.layerno = -1
+p2.bg1.spr = 14,0
+p2.bg1.scale = .33, .35
 p2.bg1.facing = -1
+p2.bg1.offset = -1.5, 0
+p2.bg1.layerno = -1
+p2.bg2.spr = 15,0
+p2.bg2.scale = .35, .35
+p2.bg2.facing = -1
+p2.bg2.offset = 4, -3.2
+p2.bg2.layerno = 0
 p2.mid.spr = 12,0
+p2.mid.scale = .34, .35
+p2.mid.offset = -5, 0
 p2.mid.facing = -1
+p2.mid.layerno = -1
 p2.front.spr = 13,0
+p2.front.scale = .34, .35
+p2.front.offset = -4, 0
 p2.front.facing = -1
-p2.shift.spr = 13,10   ;Ikemen feature
-p2.shift.facing = -1   ;Ikemen feature
-p2.range.x = 0,127
-
-[Begin Action 10] ;Darkened lifebar background 
-10,0, 0,0, 1, , S
+p2.front.layerno = -1
+;p2.shift.spr = 13,10   ;Ikemen feature
+;p2.shift.facing = -1   ;Ikemen feature
+p2.range.x = 0,117
 
 [Simul Lifebar]
 ;Player 1
@@ -509,27 +540,39 @@ p2.range.x = 0,127
 ;-----------------------------------------------------------
 [Powerbar]
 ;Player 1
-p1.pos    = 140,22
-p1.bg0.anim = 40
-p1.bg1.spr = 41,0
+p1.pos    = 122,32
+;p1.bg0.spr = 40,0
+p1.bg0.scale = .35,.35
+p1.bg0.offset = 0,0
+;p1.bg1.spr = 41,0
 ;p1.mid.spr = 42,0
+p1.bg1.spr = 43,1
+p1.bg1.scale = .34,.35
+p1.bg1.offset = -2,0
 p1.front.spr = 43,0
-p1.range.x = 0,-107
-p1.counter.offset = -108,6
+p1.front.scale = .35,.35
+p1.front.offset = -2,0
+p1.range.x = 0,-117
+p1.counter.offset = -125,6
 p1.counter.font = 1,0, 0
 p1.levelbars = 0       ;Ikemen feature
 
 ;Player 2
-p2.pos    = 178,22
-p2.bg0.anim = 40
+p2.pos    = 196,32
+;p2.bg0.spr = 40,0
+p2.bg0.scale = .35,.35
 p2.bg0.facing = -1
-p2.bg1.spr = 41,0
+p2.bg1.spr = 43,1
+p2.bg1.scale = .34,.35
+p2.bg1.offset = 2,0
 p2.bg1.facing = -1
 ;p2.mid.spr = 42,0
 ;p2.mid.facing = -1
 p2.front.spr = 43,0
+p2.front.scale = .35,.35
 p2.front.facing = -1
-p2.range.x  = 0,107
+p2.front.offset = 2,0
+p2.range.x  = 0,117
 p2.counter.offset = 109,6
 p2.counter.font = 1,0, 0
 p2.levelbars = 0       ;Ikemen feature
@@ -553,14 +596,16 @@ level3.snd = 21,0
 ;-----------------------------------------------------------
 [Face]
 ;Player 1
-p1.pos    = 2,12
-p1.bg.spr = 50,0
-p1.face.spr = 9000,0
+p1.pos    = 0,12
+;p1.bg.spr = 50,0
+p1.face.spr = 9000,4545
+p1.face.scale = 0.3,0.3
 p1.face.facing = 1
-p1.face.offset = 0,10
+p1.face.offset = -40,-10
+p1.face.offset.layerno = 1
 ;Player 2
 p2.pos    = 316,12
-p2.bg.spr = 50,0
+;p2.bg.spr = 50,0
 p2.bg.facing = -1
 p2.face.spr = 9000,0
 p2.face.facing = -1
@@ -582,14 +627,14 @@ p2.face.facing = -1
 p2.face.offset = 0,10
 ;Player 3
 p3.pos = 30,30
-p3.bg.spr = 70,0
+;p3.bg.spr = 70,0
 p3.face.spr = 9000,0
 p3.face.scale = 0.64,0.64
 p3.face.facing = 1
 p3.face.offset = 1,1
 ;Player 4
 p4.pos = 288,30
-p4.bg.spr = 70,0
+;p4.bg.spr = 70,0
 p4.bg.facing = -1
 p4.face.spr = 9000,0
 p4.face.scale = 0.64,0.64
@@ -613,14 +658,14 @@ p2.face.facing = -1
 p2.face.offset = 0,10
 ;Player 3
 p3.pos = 30,30
-p3.bg.spr = 70,0
+;p3.bg.spr = 70,0
 p3.face.spr = 9000,0
 p3.face.scale = 0.64,0.64
 p3.face.facing = 1
 p3.face.offset = 1,1
 ;Player 4
 p4.pos = 288,30
-p4.bg.spr = 70,0
+;p4.bg.spr = 70,0
 p4.bg.facing = -1
 p4.face.spr = 9000,0
 p4.face.scale = 0.64,0.64
@@ -628,14 +673,14 @@ p4.face.facing = -1
 p4.face.offset = -1,1
 ;Player 5
 p5.pos = 50,30
-p5.bg.spr = 70,0
+;p5.bg.spr = 70,0
 p5.face.spr = 9000,0
 p5.face.scale = 0.64,0.64
 p5.face.facing = 1
 p5.face.offset = 1,1
 ;Player 6
 p6.pos = 268,30
-p6.bg.spr = 70,0
+;p6.bg.spr = 70,0
 p6.bg.facing = -1
 p6.face.spr = 9000,0
 p6.face.scale = 0.64,0.64
@@ -646,27 +691,27 @@ p6.face.offset = -1,1
 [Simul_4P Face]
 ;Player 1
 p1.pos    = 2,12
-p1.bg.spr = 50,0
+;p1.bg.spr = 50,0
 p1.face.spr = 9000,0
 p1.face.facing = 1
 p1.face.offset = 0,10
 ;Player 2
 p2.pos    = 316,12
-p2.bg.spr = 50,0
+;p2.bg.spr = 50,0
 p2.bg.facing = -1
 p2.face.spr = 9000,0
 p2.face.facing = -1
 p2.face.offset = 0,10
 ;Player 3
 p3.pos = 30,30
-p3.bg.spr = 70,0
+;p3.bg.spr = 70,0
 p3.face.spr = 9000,0
 p3.face.scale = 0.64,0.64
 p3.face.facing = 1
 p3.face.offset = 1,1
 ;Player 4
 p4.pos = 288,30
-p4.bg.spr = 70,0
+;p4.bg.spr = 70,0
 p4.bg.facing = -1
 p4.face.spr = 9000,0
 p4.face.scale = 0.64,0.64
@@ -674,14 +719,14 @@ p4.face.facing = -1
 p4.face.offset = -1,1
 ;Player 5
 p5.pos = 50,30
-p5.bg.spr = 70,0
+;p5.bg.spr = 70,0
 p5.face.spr = 9000,0
 p5.face.scale = 0.64,0.64
 p5.face.facing = 1
 p5.face.offset = 1,1
 ;Player 6
 p6.pos = 268,30
-p6.bg.spr = 70,0
+;p6.bg.spr = 70,0
 p6.bg.facing = -1
 p6.face.spr = 9000,0
 p6.face.scale = 0.64,0.64
@@ -689,14 +734,14 @@ p6.face.facing = -1
 p6.face.offset = -1,1
 ;Player 7
 p7.pos = 70,30
-p7.bg.spr = 70,0
+;p7.bg.spr = 70,0
 p7.face.spr = 9000,0
 p7.face.scale = 0.64,0.64
 p7.face.facing = 1
 p7.face.offset = 1,1
 ;Player 8
 p8.pos = 248,30
-p8.bg.spr = 70,0
+;p8.bg.spr = 70,0
 p8.bg.facing = -1
 p8.face.spr = 9000,0
 p8.face.scale = 0.64,0.64
@@ -720,7 +765,7 @@ p2.face.facing = -1
 p2.face.offset = 0,10
 ;Player 3
 p3.pos = 30,30
-p3.bg.spr = 70,0
+;p3.bg.spr = 70,0
 p3.ko.spr = 71,0
 p3.face.spr = 9000,0
 p3.face.scale = 0.64,0.64
@@ -728,7 +773,7 @@ p3.face.facing = 1
 p3.face.offset = 1,1
 ;Player 4
 p4.pos = 288,30
-p4.bg.spr = 70,0
+;p4.bg.spr = 70,0
 p4.bg.facing = -1
 p4.ko.spr = 71,0
 p4.ko.facing = -1
@@ -738,7 +783,7 @@ p4.face.facing = -1
 p4.face.offset = -1,1
 ;Player 5
 p5.pos = 50,30
-p5.bg.spr = 70,0
+;p5.bg.spr = 70,0
 p5.ko.spr = 71,0
 p5.face.spr = 9000,0
 p5.face.scale = 0.64,0.64
@@ -746,7 +791,7 @@ p5.face.facing = 1
 p5.face.offset = 1,1
 ;Player 6
 p6.pos = 268,30
-p6.bg.spr = 70,0
+;p6.bg.spr = 70,0
 p6.bg.facing = -1
 p6.ko.spr = 71,0
 p6.ko.facing = -1
@@ -776,13 +821,13 @@ p8.face.offset = -1,1
 [Turns Face]
 ;Player 1
 p1.pos    = 2,12
-p1.bg.spr = 50,0
+;p1.bg.spr = 50,0
 p1.face.spr = 9000,0
 p1.face.facing = 1
 p1.face.offset = 0,10
 p1.teammate.pos = 30,30
 p1.teammate.spacing = 20,0
-p1.teammate.bg.spr = 70,0
+;p1.teammate.bg.spr = 70,0
 p1.teammate.ko.spr = 71,0
 p1.teammate.face.spr = 9000,0
 p1.teammate.face.scale = 0.64,0.64
@@ -790,14 +835,14 @@ p1.teammate.face.facing = 1
 p1.teammate.face.offset = 1,1
 ;Player 2
 p2.pos    = 316,12
-p2.bg.spr = 50,0
+;p2.bg.spr = 50,0
 p2.bg.facing = -1
 p2.face.spr = 9000,0
 p2.face.facing = -1
 p2.face.offset = 0,10
 p2.teammate.pos = 288,30
 p2.teammate.spacing = -20,0
-p2.teammate.bg.spr = 70,0
+;p2.teammate.bg.spr = 70,0
 p2.teammate.bg.facing = -1
 p2.teammate.ko.spr = 71,0
 p2.teammate.ko.facing = -1
@@ -809,11 +854,11 @@ p2.teammate.face.offset = -1,1
 ;-----------------------------------------------------------
 [Name]
 ;Player 1
-p1.pos = 14,10
+p1.pos = 4,10
 ;p1.bg. =
 p1.name.font = 3,0, 1
 ;Player 2
-p2.pos = 305,10
+p2.pos = 315,10
 ;p2.bg. =
 p2.name.font = 3,0, -1
 
@@ -880,11 +925,14 @@ p2.name.font = 3,0, -1
 
 ;-----------------------------------------------------------
 [Time]
-pos = 160,23
+pos = 160,0
 ; Uncomment the following line to use a bg component
-;bg.spr = 
+bg.spr = 90,0
+bg.scale = .35,.35
+bg.offset = 0,50
+
 ; Time count display
-counter.offset = 0,0
+counter.offset = 0,25
 counter.font = 2,0, 0
 ; Ticks for each count
 framespercount = 60
@@ -1172,122 +1220,6 @@ useiconupto = 4
 
 ;-----------------------------------------------------------
 ; Ikemen feature
-[WinCount]
-p1.pos = 141,8
-;p1.bg.spr = 
-p1.text.font = 3,0, -1
-p1.text.text = WINS %s
-
-p2.pos = 178,8
-;p2.bg.spr = 
-p2.text.font = 3,0, 1
-p2.text.text = WINS %s
-
-p1.enabled.netplayversus = 1
-p1.enabled.versus = 1
-p1.enabled.versuscoop = 1
-
-p2.enabled.netplayversus = 1
-p2.enabled.versus = 1
-p2.enabled.versuscoop = 1
-
-;-----------------------------------------------------------
-; Ikemen feature
-[Timer]
-pos = 141,8
-;bg.spr = 
-text.font = 3,0, -1
-; Time format: %m = minutes, %s = seconds, %x = milliseconds
-text.text = TIME:%m:%s.%x
-
-enabled.timeattack = 1
-enabled.timechallenge = 1
-
-;-----------------------------------------------------------
-; Ikemen feature
-[Score]
-p1.pos = 141,8
-;p1.bg.spr = 
-p1.text.font = 3,0, -1
-p1.text.text = %s
-
-p2.pos = 178,8
-;p2.bg.spr = 
-p2.text.font = 3,0, 1
-p2.text.text = %s
-
-score.min = 0
-score.max = 9999999
-format.integer.pad = 1
-format.integer.separator = 
-format.decimal.places = 0
-format.decimal.separator = .
-
-p1.enabled.arcade = 1
-p1.enabled.bossrush = 1
-p1.enabled.freebattle = 1
-p1.enabled.netplayteamcoop = 1
-p1.enabled.scorechallenge = 1
-p1.enabled.teamcoop = 1
-p1.enabled.training = 1
-
-;-----------------------------------------------------------
-; Ikemen feature
-[Match]
-pos = 141,8
-;bg.spr = 
-text.font = 3,0, -1
-text.text = STAGE %s
-
-enabled.netplaysurvivalcoop = 1
-enabled.survival = 1
-enabled.survivalcoop = 1
-enabled.vs100kumite = 1
-
-;-----------------------------------------------------------
-; Ikemen feature
-[AILevel]
-p1.pos = 141,8
-;p1.bg.spr = 
-p1.text.font = 3,0, -1
-; %s = integer value, %p = percentage
-p1.text.text = CPU-%s
-
-p2.pos = 178,8
-;p2.bg.spr = 
-p2.text.font = 3,0, 1
-p2.text.text = CPU-%s
-
-format.decimal.places = 0
-format.decimal.separator = .
-
-p1.enabled.watch = 1
-
-p2.enabled.arcade = 1
-p2.enabled.bossrush = 1
-p2.enabled.freebattle = 1
-p2.enabled.netplaysurvivalcoop = 1
-p2.enabled.netplayteamcoop = 1
-p2.enabled.scorechallenge = 1
-p2.enabled.survival = 1
-p2.enabled.survivalcoop = 1
-p2.enabled.teamcoop = 1
-p2.enabled.timeattack = 1
-p2.enabled.timechallenge = 1
-p2.enabled.training = 1
-p2.enabled.vs100kumite = 1
-p2.enabled.watch = 1
-
-;-----------------------------------------------------------
-; Ikemen feature
-[Mode]
-demo.pos = 305,10
-;demo.bg.spr = 
-demo.text.font = 3,0, -1
-demo.text.text = Demo Mode
-
-;-----------------------------------------------------------
-; Ikemen feature
 [Ratio]
 p1.pos          = 7, 15
 p1.level1.spr   = 300, 0
@@ -1309,16 +1241,80 @@ p2.level4.spr   = 300, 3
 p2.level4.scale = 0.5, 0.5
 
 ;-----------------------------------------------------------
+; Ikemen feature
+[Timer]
+pos = 141,8
+;bg.spr = 
+text.font = 3,0, -1
+; Time format: %m = minutes, %s = seconds, %x = milliseconds
+text.text = TIME:%m:%s.%x
+
+;-----------------------------------------------------------
+; Ikemen feature
+[Score]
+p1.pos = 141,8
+;p1.bg.spr = 
+p1.text.font = 3,0, -1
+p1.text.text = %s
+
+p2.pos = 178,8
+;p2.bg.spr = 
+p2.text.font = 3,0, 1
+p2.text.text = %s
+
+score.min = 0
+score.max = 9999999
+format.integer.pad = 1
+format.integer.separator = 
+format.decimal.places = 0
+format.decimal.separator = .
+
+;-----------------------------------------------------------
+; Ikemen feature
+[Match]
+pos = 141,8
+;bg.spr = 
+text.font = 3,0, -1
+text.text = STAGE %s
+
+;-----------------------------------------------------------
+; Ikemen feature
+[AILevel]
+p1.pos = 141,8
+;p1.bg.spr = 
+p1.text.font = 3,0, -1
+; %s = integer value, %p = percentage
+p1.text.text = CPU-%s
+
+p2.pos = 178,8
+;p2.bg.spr = 
+p2.text.font = 3,0, 1
+p2.text.text = CPU-%s
+
+format.decimal.places = 0
+format.decimal.separator = .
+
+;-----------------------------------------------------------
+; Ikemen feature
+[Mode]
+demo.pos = 305,10
+;demo.bg.spr = 
+demo.text.font = 3,0, -1
+demo.text.text = Demo Mode
+
+;-----------------------------------------------------------
 ; How to customize
 ;-----------------------------------------------------------
 ; First of all, set filenames under [Files].
 ; 
-; Next, you can customize each component of the fight screen. A component can be
-; anything from a piece of the lifebar, to the text that signals a K.O.
+; Next, you can customize each component of the fight screen.
+; A component can be anything from a piece of the lifebar,
+; to the text that signals a K.O.
 ;
-; Each component starts with its name, followed by a period, and then the names
-; of its elements. For example, a component named "bg" with an element of "anim"
-; looks like "bg.anim".
+; Each component starts with its name, followed by a period,
+; and then the names of its elements. For example, a
+; component named "bg" with an element of "anim" looks
+; like "bg.anim".
 ;
 ; There are several main element types:
 ;   1. anim (animation)
@@ -1328,60 +1324,72 @@ p2.level4.scale = 0.5, 0.5
 ; 
 ; 1. anim
 ;    Format: anim = actionno
-;    actionno is the number of the action to use. You must specify a valid
-;    action that is defined within this file. The sprites for the animation come
-;    from the file given for the "sff" parameter in the [Files] group below. You
-;    can define your animation actions anywhere in this file, as long as it does
-;    not come in the middle of a group (an example of a group is the block of
-;    text starting with [Files], and ending on the next group [Lifebar]).
+;    actionno is the number of the action to use. You must
+;    specify a valid action that is defined within this file.
+;    The sprites for the animation come from the file given
+;    for the "sff" parameter in the [Files] group below.
+;    You can define your animation actions anywhere in this
+;    file, as long as it does not come in the middle of a
+;    group (an example of a group is the block of text
+;    starting with [Files], and ending on the next group
+;    [Lifebar]).
 ;    For example, to use action 5 for the p1.bg0 component:
 ;      p1.bg0.anim = 5
 ;
 ; 2. spr
 ;    Format: spr = spritegrp, spriteno
-;    This is the identifier pair for the sprite you to display.
-;    For example, to show sprite 103,0 for a component named p1.throw:
+;    This is the identifier pair for the sprite you to
+;    display.
+;    For example, to show sprite 103,0 for a component named
+;    p1.throw:
 ;      p1.throw.spr = 103,0
 ;
 ; 3. font
 ;    Format: font = fontno, fontbank, alignmnt, R, G, B
 ;            text = text
-;    This lets you set the font (and optionally the content text).
-;    - fontno is the number of the font defined under [Files]. For instance, for
-;    the line "font2 = font/num1.fnt", the fontno is 2.
-;    - fontbank is the color bank of the font to use. Refer to the font for what
-;    color banks it has.
-;    - alignmt is a number representing the text alignment. 1 is left, 0 means
-;    center, and -1 is for right-alignment.
-;    - R, G, B are the color adjustment values for the font. RGB values default
-;    to 256,256,256 (no color adjustment).
-;    All font values are optional. If fontno is omitted, no text will be drawn.
+;    This lets you set the font (and optionally the content
+;    text). fontno is the number of the font defined under
+;    [Files]. For instance, for the line "font2 = font/num1.fnt",
+;    the fontno is 2.
+;    fontbank is the color bank of the font to use. Refer to
+;    the font for what color banks it has.
+;    alignmt is a number representing the text alignment.
+;    1 is left, 0 means center, and -1 is for right-alignment.
+;    R, G, B are the color adjustment values for the font.
+;    RGB values default to 256,256,256 (no color adjustment).
+;    All font values are optional.  If fontno is omitted, no
+;    text will be drawn.
 ;
-;    The "text" element should accompany the "font" element wherever necessary.
-;    The following example will display "FIGHT!" using font 1, bank 1, with
-;    center-alignment.
+;    The "text" element should accompany the "font" element
+;    wherever necessary. The following example will display
+;    "FIGHT!" using font 1, bank 1, with center-alignment.
 ;      fight.font = 1,1, 0
 ;      fight.text = FIGHT!
 ;
 ; 4. snd
 ;    Format: snd = sndgrp, sndno
-;    This is the identifier pair for the sound effect to play. The .snd file
-;    that the sound is played from is given in the "snd" parameter in the
-;    [Files] group. This plays sound 21,0 for the "level1" component.
+;    This is the identifier pair for the sound effect to
+;    play. The .snd file that the sound is played from
+;    is given in the "snd" parameter in the [Files] group.
+;    This plays sound 21,0 for the "level1" component.
 ;      level1.snd = 21,0
 ; 
-; Take note that the anim, spr and font element types are mutually exclusive;
-; you can only use one of them per component.
+; Take note that the anim, spr and font element types are
+; mutually exclusive; you can only use one of them per
+; component.
 ;
-; The types of elements supported vary with the component. Usually the anim, spr
-; and font elements are interchangeable for a component. However, in some cases
-; only one element type may be used. An example of this is found under [Combo]:
+; The types of elements supported vary with the component.
+; Usually the anim, spr and font elements are interchangeable
+; for a component. However, in some cases only one element
+; type may be used. An example of this is found under [Combo]:
 ;   counter.font = 2,4  ;Font for combo counter
-; You cannot use an animation or a sprite to represent a numeric counter, so it
-; only makes sense to define a font for use.
+; You cannot use an animation or a sprite to represent a
+; numeric counter, so it only makes sense to define a font
+; for use.
 ;
-; There are other element types that do nothing on their own. They can be used
-; with display element types (spr, anim and font) to gain more control. These
+; There are other element types that do nothing on their
+; own. They can be used with display element types
+; (spr, anim and font) to gain more control. These
 ; have no meaning when used with the snd element.
 ;   5.  offset
 ;   6.  displaytime
@@ -1389,64 +1397,59 @@ p2.level4.scale = 0.5, 0.5
 ;   8.  vfacing
 ;   9.  layerno
 ;   10. scale
-;   11. angle
-;   12. window (Ikemen feature)
 ;
 ; 5. offset
 ;   Format: offset = x, y
-;   Displaces the display element horizontally by x pixels, and vertically by y
-;   pixels. If this element is omitted, the offset is assumed to be 0,0.
+;   Displaces the display element horizontally by x pixels,
+;   and vertically by y pixels.
+;   If this element is omitted, the offset is assumed to
+;   be 0,0.
 ;
 ; 6. displaytime
 ;   Format: displaytime = time_in_ticks
-;   This element defines the time to display the component. If omitted, the
-;   default display time varies with element type. For spr and font elements,
-;   the default displaytime is 1. For anim, it is the looptime of the animation.
-;   This example displays the text "FIGHT!" for 45 game ticks:
+;   This element defines the time to display the component.
+;   If omitted, the default display time varies with element
+;   type. For spr and font elements, the default displaytime
+;   is 1. For anim, it is the looptime of the animation.
+;   This example displays the text "FIGHT!" for 45 game
+;   ticks:
 ;     fight.font = 1,1, 0
 ;     fight.text = FIGHT!
 ;     fight.displaytime = 45
 ;
 ; 7. facing
 ;   Format: facing = dir
-;   Sets the horizontal flipping of the display element. 1 means no flipping,
-;   and -1 means flip horizontally. Does not affect "font" elements. Defaults to
-;   1 if omitted.
+;   Sets the horizontal flipping of the display element.
+;   1 means no flipping, and -1 means flip horizontally.
+;   Does not affect "font" elements. Defaults to 1 if
+;   omitted.
 ;
 ; 8. vfacing
 ;   Format: vfacing = dir
-;   Sets the vertical flipping of the display element. 1 means no flipping, and
-;   -1 means flip vertically. Does not affect "font" elements. Defaults to 1 if
+;   Sets the vertical flipping of the display element.
+;   1 means no flipping, and -1 means flip vertically.
+;   Does not affect "font" elements. Defaults to 1 if
 ;   omitted.
 ;
 ; 9. layerno
 ;   Format: layerno = no
-;   This element lets you set the layer to which the display element will be
-;   drawn on. 0 is in front of the background, but behind the players. 1 is in
-;   front of the players, but behind the foreground. 2 is in front of the
-;   foreground. The default is 0 in most cases.
-;   An example of where this might be useful is when you want to have the life
-;   or power bars appear on top. In that case, set all the components to have
-;   layerno = 2.
+;   This element lets you set the layer to which the
+;   display element will be drawn on. 0 is in front of
+;   the background, but behind the players. 1 is in
+;   front of the players, but behind the foreground.
+;   2 is in front of the foreground. The default is 0
+;   in most cases.
+;   An example of where this might be useful is when
+;   you want to have the life or power bars appear
+;   on top. In that case, set all the components to
+;   have layerno = 2.
 ;
 ; 10. scale
 ;   Format: scale = xscale, yscale
-;   Scales the display element by a horizontal scale factor of xscale, and
-;   vertically by a factor of yscale. Defaults to 1,1 if omitted.
-;
-; 11. angle
-;   Format: angle = degrees
-;   Draws the element rotated by the specified angle.
+;   Scales the display element by a horizontal scale
+;   factor of xscale, and vertically by a factor of
+;   yscale. Defaults to 1,1 if omitted.
 ;   Currently does not affect "font" elements.
-;
-; 12. window (Ikemen feature)
-;   Format: window = x1, y1, x2, y2
-;   Specify window with four coordinates x1, y1, x2, and y2 respectively.
-;   Considering the upper left corner of the screen as (0,0), these coordinates
-;   are taken to form a rectangular box with (x1,y1) and (x2,y2) at opposite
-;   corners. Only the part of the display element type that comes within this
-;   box (the "window") will be drawn. If you do not need the windowing effect,
-;   omit this line entirely.
 ;
 ; Some components have additional elements specific
 ; to themselves.

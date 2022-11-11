@@ -201,8 +201,10 @@
  ;
  ;Insert your characters below.
 
-kfmZ, stages/kfm.def
-kfm720, stages/kfm.def, order=0
+aatrox
+Schargot
+Ryu
+Linged
 randomselect
 
 ;-------------------------------------------------------------------------------
@@ -270,9 +272,7 @@ randomselect
  ;
  ;Insert your stages below.
 
-stages/kfm.def
-stages/stage0.def
-stages/stage0-720.def
+stages/AH3-stage12_KagoshimaHD.def
 
 ;-------------------------------------------------------------------------------
 [Options]
